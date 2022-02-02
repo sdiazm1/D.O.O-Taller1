@@ -394,6 +394,21 @@ public class CalculadoraEstadisticas
 		return cantidadMedallistas / cantidadAtletas;
 	}
 
+	public String paisDelAtleta(String nombreAtleta)
+	{
+		
+		for (Atleta unAtleta : atletas)
+		{
+			if (unAtleta.darNombre().equals(nombreAtleta)) 
+			{
+				Pais pais= unAtleta.darPais();
+				String nombrePais = pais.darNombre();
+				return nombrePais;
+			}
+		}
+		return "no se ha encontrado el pais";
+	}
+	
 	/**
 	 * Retorna el país con el nombre indicado
 	 * 
@@ -427,6 +442,7 @@ public class CalculadoraEstadisticas
 		}
 		return elAtleta;
 	}
+	
 
 	/**
 	 * Retorna una colección con los nombres de los eventos
